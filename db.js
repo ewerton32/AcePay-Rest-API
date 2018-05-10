@@ -353,6 +353,142 @@ function executeQuery(_numeroConsulta, callback) {
                 }
         }]).toArray(callback);
             break;
+        //32 - Buscar a soma dos saldos das das contas cujos endereços sao do Estado de Alagoas
+        case '32': queryMongo.aggregate([{
+            $match:
+                {
+                    "endereco.estado": { $in: [/al/i] },
+                }
+        },
+        {
+            $group:
+                {
+                    _id: null,
+                    soma: { $sum: "$conta_acepay.saldo_BTC" }
+                }
+        }]).toArray(callback);
+            break;
+        //33 - Buscar a soma dos saldos das das contas cujos endereços sao do Estado da Bahia
+        case '33': queryMongo.aggregate([{
+            $match:
+                {
+                    "endereco.estado": { $in: [/ba/i] },
+                }
+        },
+        {
+            $group:
+                {
+                    _id: null,
+                    soma: { $sum: "$conta_acepay.saldo_BTC" }
+                }
+        }]).toArray(callback);
+            break;
+        //34 - Buscar a soma dos saldos das das contas cujos endereços sao do Estado do Ceará
+        case '34': queryMongo.aggregate([{
+            $match:
+                {
+                    "endereco.estado": { $in: [/ce/i] },
+                }
+        },
+        {
+            $group:
+                {
+                    _id: null,
+                    soma: { $sum: "$conta_acepay.saldo_BTC" }
+                }
+        }]).toArray(callback);
+            break;
+        //35 - Buscar a soma dos saldos das das contas cujos endereços sao do Estado de Maranhão
+        case '35': queryMongo.aggregate([{
+            $match:
+                {
+                    "endereco.estado": { $in: [/ma/i] },
+                }
+        },
+        {
+            $group:
+                {
+                    _id: null,
+                    soma: { $sum: "$conta_acepay.saldo_BTC" }
+                }
+        }]).toArray(callback);
+            break;
+        //36 - Buscar a soma dos saldos das das contas cujos endereços sao do Estado do Piauí
+        case '36': queryMongo.aggregate([{
+            $match:
+                {
+                    "endereco.estado": { $in: [/pi/i] },
+                }
+        },
+        {
+            $group:
+                {
+                    _id: null,
+                    soma: { $sum: "$conta_acepay.saldo_BTC" }
+                }
+        }]).toArray(callback);
+            break;
+        //37 - Buscar a soma dos saldos das das contas cujos endereços sao do Estado da Paraíba
+        case '37': queryMongo.aggregate([{
+            $match:
+                {
+                    "endereco.estado": { $in: [/pa/i] },
+                }
+        },
+        {
+            $group:
+                {
+                    _id: null,
+                    soma: { $sum: "$conta_acepay.saldo_BTC" }
+                }
+        }]).toArray(callback);
+            break;
+        //38 - Buscar a soma dos saldos das das contas cujos endereços sao do Estado da Paraíba
+        case '38': queryMongo.aggregate([{
+            $match:
+                {
+                    "endereco.estado": { $in: [/pa/i] },
+                }
+        },
+        {
+            $group:
+                {
+                    _id: null,
+                    soma: { $sum: "$conta_acepay.saldo_BTC" }
+                }
+        }]).toArray(callback);
+            break;
+        //39 - Buscar a soma dos saldos das das contas cujos endereços sao do Estado de Sergipe
+        case '39': queryMongo.aggregate([{
+            $match:
+                {
+                    "endereco.estado": { $in: [/se/i] },
+                }
+        },
+        {
+            $group:
+                {
+                    _id: null,
+                    soma: { $sum: "$conta_acepay.saldo_BTC" }
+                }
+        }]).toArray(callback);
+            break;
+        //40 - Buscar a soma dos saldos das contas cujos endereços sao do Estado do Rio Grande do Norte
+        case '40': queryMongo.aggregate([{
+            $match:
+                {
+                    "endereco.estado": { $in: [/rn/i] },
+                }
+        },
+        {
+            $group:
+                {
+                    _id: null,
+                    soma: { $sum: "$conta_acepay.saldo_BTC" }
+                }
+        }]).toArray(callback);
+            break;
+
         default: console.log("default");
     }
 }
